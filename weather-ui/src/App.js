@@ -11,7 +11,6 @@ function App() {
       <Router>
         <Route path="/" exact>
           <HomePage/>
-          <p>yes this is some text.</p>
         </Route>
         <Route path="/city">
         </Route>
