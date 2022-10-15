@@ -10,7 +10,7 @@ function HomePage() {
         <body class='container'>
             <img src={logo} class='logo' alt="logo"></img>
             <div class='toggle'>
-                <label classname='switch'>
+                <label class='switch'>
                     <input id='toggler' type='checkbox'></input>
                     <span class='slider round'></span>
                 </label>
