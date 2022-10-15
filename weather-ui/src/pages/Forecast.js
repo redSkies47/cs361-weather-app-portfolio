@@ -1,6 +1,6 @@
 import React from 'react';
 // import { useHistory } from 'react-router-dom';
-import logo from '../img/logo01.png';
+import logo from '../img/logo192.png';
 import { BsArrowClockwise } from 'react-icons/bs';
 import { WiNightCloudy, WiCloudy, WiDaySunny } from 'react-icons/wi';
 import { MdWarning } from 'react-icons/md'

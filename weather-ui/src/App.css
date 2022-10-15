@@ -1,6 +1,109 @@
-.App {
-  text-align: center;
+/* * { border : 1px solid blue } */
+/* background-color: #181818;
+color: #ffffff;
+width:100vw;
+height:100vh; */
+/* grid-template-columns: 0.3fr 0.6fr 0.3fr;
+grid-template-rows: 0.1fr 0.7fr 0.2fr; */
+
+.container {  display: grid;
+  grid-template-columns: 0.7fr 1.6fr 0.7fr;
+  grid-template-rows: 0.5fr 2fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-content: center;
+  grid-template-areas:
+    "logo . toggle"
+    ". search ."
+    ". . .";
+  background-color: #1d1e22;
+  color: #ffffff;
+  width:100vw;
+  height:100vh;
 }
+
+.logo { grid-area: logo; 
+  text-align: center;
+  padding-top: 5%;
+  padding-left: 20%;;
+}
+
+.search {  display: grid;
+  grid-area: search;
+  justify-content: center; 
+  align-content: center; 
+  justify-items: center; 
+  align-items: center; 
+}
+
+.toggle {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "switch switch ."
+    "explain explain explain"
+    "explain explain explain";
+  grid-area: toggle;
+}
+
+.explain { grid-area: explain; }
+
+.switch { grid-area: switch; 
+}
+
+h4 {
+  font-size: calc(10px + 2vmin);
+}
+
+.search-bar {
+  /* border: 1px solid red; */
+  width: 100%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 10px 30px;
+}
+
+.search-bar input {
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 24px 20px;
+  font-size: 20px;
+  color:#EAE2B7;
+}
+
+::placeholder{
+  color:#003049;
+}
+
+.search-bar button {
+  width: 25px;
+  border: 0px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: #FCBF49;
+  cursor: pointer;
+}
+
+.search-type {
+  font-size: calc(8px + 2vmin);
+  padding-left: 10px;
+}
+
+.explain {
+  font-size: calc(6px + 1vmin);
+  color: #FCBF49;
+}
+/* .App {
+  text-align: center;
+} */
 
 /* .App-logo {
   height: 40vmin;
@@ -13,7 +116,7 @@
   }
 } */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,9 +125,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
-body {
+/* body {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -33,7 +136,7 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 /* .App-link {
   color: #61dafb;
