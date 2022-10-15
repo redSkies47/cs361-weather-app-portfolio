@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import Forecast from './pages/Forecast';
 
 
 function App() {
@@ -14,7 +14,8 @@ function App() {
         </Route>
         <Route path="/city">
         </Route>
-        <Route path="/forecast-f">
+        <Route path="/forecast">
+          <Forecast/>
         </Route>
         <Route path="/forecast-c">
         </Route>

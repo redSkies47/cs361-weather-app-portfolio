@@ -9,7 +9,7 @@ function HomePage() {
     return (
         <body>
             <img src={logo} classname='logo' alt="logo"></img>
-            <label class='switch'>
+            <label classname='switch'>
                 <input id='toggler' type='checkbox'></input>
             </label>
             <p classname='feature-explain'>You can now change between modes.
@@ -22,6 +22,7 @@ function HomePage() {
                 <fieldset>
                     <label for='postalcode' id='postalcode' name='postalcode'></label>
                     <input type='number' id='postalcode' name='postalcode' min='5' max='5' placeholder='(ex. 97331)'></input>
+
                     <button type='submit'>Search</button>
 
                     <input type='radio' id='postalsearch' name='searchtype' value='postalsearch' checked></input>
