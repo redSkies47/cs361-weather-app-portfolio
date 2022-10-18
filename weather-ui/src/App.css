@@ -1,4 +1,4 @@
-/* * { border : 1px solid blue } */
+* { border : 1px solid blue }
 
 .container {  display: grid;
   grid-template-columns: 0.7fr 1.6fr 0.7fr;
@@ -45,7 +45,6 @@
 .explain { grid-area: explain; 
   border-radius: 10px;
   background-color: #F77F00;
-  /* padding: 10%; */
   padding: 15px;
   text-align: center;
   font-size: calc(6px + 1vmin);
@@ -63,14 +62,61 @@
   font-size: calc(6px + 1vmin);
 }
 .switch { grid-area: switch; 
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: #ccc;
+  transition: 0.4s;
+
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
 }
 
 h4 {
+  margin-left: 60px;
+  text-align: center;
   font-size: calc(10px + 2vmin);
 }
 
 .search-bar {
-  /* border: 1px solid red; */
   width: 100%;
   max-width: 700px;
   background: rgba(255, 255, 255, 0.2);

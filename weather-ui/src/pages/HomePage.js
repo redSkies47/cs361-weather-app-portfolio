@@ -7,6 +7,8 @@ function HomePage() {
 
     const [explain, setExplain]=useState(true);
 
+    const [isToggled, setIsToggled]=useState(false);
+
     const history = useHistory();
 
     const onSearch = async () => {
@@ -18,8 +20,8 @@ function HomePage() {
             <img src={logo} class='logo' alt="logo"></img>
             <div class='toggle'>
                 <label class='switch'>
-                    <input id='toggler' type='checkbox'></input>
-                    <span class='slider round'></span>
+                    <input type='checkbox'isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)}></input>
+                    <span class='slider'></span>
                 </label>
                 {
                     
