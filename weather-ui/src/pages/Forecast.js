@@ -4,6 +4,7 @@ import logo from '../img/logo192.png';
 import { BsArrowClockwise } from 'react-icons/bs';
 import { WiCelsius, WiFahrenheit, WiNightCloudy, WiCloudy, WiDaySunny } from 'react-icons/wi';
 import { MdWarning } from 'react-icons/md';
+import DarkMode from '../components/DarkMode';
 
 function Forecast() {
 
@@ -30,10 +31,11 @@ function Forecast() {
             <img src={logo} class='logo' alt="logo"></img>
             <div class='options'>
                 <label class='switch'>
-                    <input id='toggle-forecast' type='checkbox'></input>
+                    {/* <input id='toggle-forecast' type='checkbox'></input> */}
+                    <DarkMode />
                 </label>
                 <label class="again">
-                    <p><BsArrowClockwise onClick={onRedo} id='redo-icon'/> do another search</p>
+                    <p><BsArrowClockwise onClick={onRedo} id='redo-icon'/> Another search? Press to start again from the search page!</p>
                 </label>
                 <label class='unit'>
                     <WiCelsius onClick={onCel} id='celsius-icon' />

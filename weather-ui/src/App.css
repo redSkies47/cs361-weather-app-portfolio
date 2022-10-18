@@ -1,4 +1,14 @@
-* { border : 1px solid blue }
+/* * { border : 1px solid blue } */
+
+body.light {
+  background-color: #EAE2B7;
+  color: #1d1e22;
+}
+
+body.dark {
+  background-color: #1d1e22;
+  color:#EAE2B7
+}
 
 .container {  display: grid;
   grid-template-columns: 0.7fr 1.6fr 0.7fr;
@@ -10,8 +20,8 @@
     "logo . toggle"
     ". search ."
     ". . .";
-  background-color: #1d1e22;
-  color: #ffffff;
+  /* background-color: #1d1e22;
+  color: #ffffff; */
   width:100vw;
   height:100vh;
 }
@@ -64,17 +74,17 @@
 .switch { grid-area: switch; 
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  /* width: 60px;
+  height: 34px; */
 }
 
-.switch input {
+/* .switch input {
   opacity: 0;
   width: 0;
   height: 0;
-}
+} */
 
-.slider {
+/* .slider {
   position: absolute;
   cursor: pointer;
   
@@ -108,7 +118,7 @@ input:checked + .slider {
 
 input:checked + .slider::before {
   transform: translateX(26px);
-}
+} */
 
 h4 {
   margin-left: 60px;
@@ -170,8 +180,8 @@ h4 {
     ". main-info options"
     ". extra-info ."; 
   justify-content: center;
-  background-color: #1d1e22;
-  color: #ffffff;
+  /* background-color: #1d1e22;
+  color: #ffffff; */
   width:100vw;
   height:100vh; 
 }
@@ -186,7 +196,7 @@ h4 {
   padding-bottom: 0px;
   font-size: calc(4px + 2vmin);
   text-align: center;
-  color: #EAE2B7;
+  /* color: #EAE2B7; */
 }
 
 .current {
@@ -250,9 +260,9 @@ h3 {
 
 .options { grid-area: options; }
 
-.again {
+/* .again {
   color: #EAE2B7;
-}
+} */
 
 #redo-icon, #celsius-icon, #fahrenheit-icon {
   cursor: pointer;

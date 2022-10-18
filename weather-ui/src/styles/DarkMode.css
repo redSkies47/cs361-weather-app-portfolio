@@ -1,0 +1,8 @@
+#darkMode {
+    font-size: 50px;
+}
+
+#darkMode.clicked {
+    filter: none !important;
+    /* background-color: black; */
+}

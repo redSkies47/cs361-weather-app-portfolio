@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import logo from '../img/logo192.png';
 import { MdSearch } from 'react-icons/md';
 import { useHistory } from 'react-router-dom';
+import DarkMode from '../components/DarkMode';
 
 function HomePage() {
 
     const [explain, setExplain]=useState(true);
 
-    const [isToggled, setIsToggled]=useState(false);
+    // const [isToggled, setIsToggled]=useState(false);
 
     const history = useHistory();
 
@@ -20,8 +21,9 @@ function HomePage() {
             <img src={logo} class='logo' alt="logo"></img>
             <div class='toggle'>
                 <label class='switch'>
-                    <input type='checkbox'isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)}></input>
-                    <span class='slider'></span>
+                    <DarkMode />
+                    {/* <input type='checkbox'isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)}></input>
+                    <span class='slider'></span> */}
                 </label>
                 {
                     
