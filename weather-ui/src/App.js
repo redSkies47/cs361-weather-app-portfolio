@@ -15,7 +15,7 @@ function App() {
         </Route>
         <Route path="/city">
         </Route>
-        <Route path="/forecast">
+        <Route path="/forecast-f">
           <Forecast/>
         </Route>
         <Route path="/forecast-c">

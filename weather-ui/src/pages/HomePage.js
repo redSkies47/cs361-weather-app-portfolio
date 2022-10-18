@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
 import logo from '../img/logo192.png';
 import { MdSearch } from 'react-icons/md';
+import { useHistory } from 'react-router-dom';
 
 function HomePage() {
 
-    // const history = useHistory();
-
     const [explain, setExplain]=useState(true);
+
+    const history = useHistory();
+
+    const onSearch = async () => {
+        history.pushState('/forecast-f')
+    }
     
     return (
         <body class='container'>
@@ -27,14 +31,13 @@ function HomePage() {
             </div>
             <div class='search'>
                 <h4>See today's weather forecast by searching for a postal code!</h4>
-                <form action='/'>
-                    <form class='search-bar'>
+                <form action='/forecast-f' method='get'>
+                    <div class='search-bar'>
                         <label for='postalcode' id='postalcode' name='postalcode'></label>
                         <input type='text' pattern="[0-9]*" id='postalcode' name='postalcode' placeholder='(ex. 97331)'></input>
 
-                        {/* <button type='submit'>Search</button> */}
-                        <button type='submit'><MdSearch id='search-icon'/></button>
-                    </form>
+                        <button type='submit' value='submit'><MdSearch id='search-icon' onClick={onSearch}/></button>
+                    </div>
                     <form class='search-type'>
                         <input type='radio' id='postalsearch' name='searchtype' value='postalsearch' checked></input>
                         <label for='postalsearch'>Postal Code</label>

@@ -18,11 +18,11 @@ function Celsius() {
     }
 
     const onCel = async() => {
-        history.push('forecast-c')
+        history.push('/forecast-c')
     }
 
     const onFah = async () => {
-        history.push('/forecast')
+        history.push('/forecast-f')
     }
 
     return (
@@ -46,7 +46,7 @@ function Celsius() {
                     </p>:<div></div>
                 
                 }
-                <button class='my-buttons' type='button' onClick={()=>setShow(!show)}>More info</button>
+                <button class='my-buttons' type='button' onClick={()=>setShow(!show)} id='more-info'>More info</button>
             </div>
             <div class='main-info'>
                 <h4>Corvallis, OR <br/> 97331</h4>

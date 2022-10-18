@@ -18,7 +18,7 @@ function Forecast() {
     }
 
     const onCel = async() => {
-        history.push('forecast-c')
+        history.push('/forecast-c')
     }
 
     const onFah = async () => {
