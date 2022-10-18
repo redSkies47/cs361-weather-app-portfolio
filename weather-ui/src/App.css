@@ -42,8 +42,26 @@
   grid-area: toggle;
 }
 
-.explain { grid-area: explain; }
+.explain { grid-area: explain; 
+  border-radius: 10px;
+  background-color: #F77F00;
+  /* padding: 10%; */
+  padding: 15px;
+  text-align: center;
+  font-size: calc(6px + 1vmin);
+  color: #003049;
+}
 
+.my-buttons {
+  background-color: #003049;
+  border-radius: 5px;
+  border: none;
+  margin: 2%;
+  padding: 3%;
+  color: #EAE2B7;
+  cursor: pointer;
+  font-size: calc(6px + 1vmin);
+}
 .switch { grid-area: switch; 
 }
 
@@ -91,9 +109,9 @@ h4 {
   padding-left: 10px;
 }
 
-.explain {
-  font-size: calc(6px + 1vmin);
-  color: #FCBF49;
+#search-icon {
+  padding-top: 4px;
+  font-size: calc(8px + 3vmin);
 }
 
 .container2 {
@@ -111,7 +129,7 @@ h4 {
   width:100vw;
   height:100vh; 
 }
-/* .logo { grid-area: logo; } */
+
 .main-info { grid-area: main-info; 
   display: inline-grid;
   justify-items: center;
@@ -185,6 +203,27 @@ h3 {
 }
 
 .options { grid-area: options; }
+
+.again {
+  color: #EAE2B7;
+}
+
+#redo-icon, #celsius-icon, #fahrenheit-icon {
+  cursor: pointer;
+}
+
+#redo-icon:hover, #celsius-icon:hover, #fahrenheit-icon:hover {
+  color: #D62828;
+}
+
+
+.unit {
+  font-size: calc(8px + 4vmin);
+}
+
+.selected {
+  color: #F77F00;
+}
 
 /* .App {
   text-align: center;

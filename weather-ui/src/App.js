@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Forecast from './pages/Forecast';
+import Celsius from './pages/Forecast-C';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Forecast/>
         </Route>
         <Route path="/forecast-c">
+          <Celsius/>
         </Route>
       </Router>
     </div>

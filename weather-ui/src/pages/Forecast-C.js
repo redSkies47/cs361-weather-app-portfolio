@@ -5,7 +5,7 @@ import { BsArrowClockwise } from 'react-icons/bs';
 import { WiCelsius, WiFahrenheit, WiNightCloudy, WiCloudy, WiDaySunny } from 'react-icons/wi';
 import { MdWarning } from 'react-icons/md';
 
-function Forecast() {
+function Celsius() {
 
     const history = useHistory();
 
@@ -32,8 +32,8 @@ function Forecast() {
                     <p><BsArrowClockwise onClick={onRedo} id='redo-icon'/> do another search</p>
                 </label>
                 <label class='unit'>
-                    <WiCelsius onClick={onCel} id='celsius-icon' />
-                    <WiFahrenheit class='selected' onClick={onFah} id='fahrenheit-icon'/>
+                    <WiCelsius class='selected' onClick={onCel} id='celsius-icon' />
+                    <WiFahrenheit onClick={onFah} id='fahrenheit-icon'/>
                 </label>
                 <p class='explain'>Switch between Celsius and Fahrenheit.
                     <button class='my-buttons' type='button'>Ok!</button>
@@ -43,7 +43,7 @@ function Forecast() {
             <div class='main-info'>
                 <h4>Corvallis, OR <br/> 97331</h4>
                 <span class='current'>
-                    <h1 class='temp'>65&#176;</h1>
+                    <h1 class='temp'>18&#176;</h1>
                     <div class='details'>
                         <WiNightCloudy class='image'/>
                         <h2 class='description'>Mostly Cloudy</h2>
@@ -67,15 +67,15 @@ function Forecast() {
                     </tr>
                     <tr class='highs'>
                         <td class='key'>highs</td>
-                        <td>78&#176;</td>
-                        <td>71&#176;</td>
-                        <td>78&#176;</td>
+                        <td>26&#176;</td>
+                        <td>22&#176;</td>
+                        <td>26&#176;</td>
                     </tr>
                     <tr class='lows'>
                         <td class='key'>lows</td>
-                        <td>46&#176;</td>
-                        <td>49&#176;</td>
-                        <td>47&#176;</td>
+                        <td>7&#176;</td>
+                        <td>9&#176;</td>
+                        <td>8&#176;</td>
                     </tr>
                     <tr class='humidity'>
                         <td class='key'>humidity</td>
@@ -89,4 +89,4 @@ function Forecast() {
     );
 }
 
-export default Forecast;
+export default Celsius;
