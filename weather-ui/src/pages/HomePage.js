@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { useHistory } from 'react-router-dom';
 import logo from '../img/logo192.png';
 import { MdSearch } from 'react-icons/md';
@@ -6,6 +6,8 @@ import { MdSearch } from 'react-icons/md';
 function HomePage() {
 
     // const history = useHistory();
+
+    const [explain, setExplain]=useState(true);
     
     return (
         <body class='container'>
@@ -15,9 +17,13 @@ function HomePage() {
                     <input id='toggler' type='checkbox'></input>
                     <span class='slider round'></span>
                 </label>
-                <p class='explain'>You can now change between modes.
-                    <button class='my-buttons' type='button'>Ok!</button>
-                </p>
+                {
+                    
+                    explain?<p class='explain'>You can now change between modes.
+                        <button class='my-buttons' type='button' onClick={()=>setExplain(false)}>Ok!</button>
+                    </p>:<div></div>
+                
+                }
             </div>
             <div class='search'>
                 <h4>See today's weather forecast by searching for a postal code!</h4>
