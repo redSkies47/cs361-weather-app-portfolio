@@ -9,6 +9,8 @@ function Forecast() {
 
     const [show, setShow]=useState(false);
 
+    const [explain, setExplain]=useState(true);
+
     const history = useHistory();
 
     const onRedo = async () => {
@@ -37,10 +39,13 @@ function Forecast() {
                     <WiCelsius onClick={onCel} id='celsius-icon' />
                     <WiFahrenheit class='selected' onClick={onFah} id='fahrenheit-icon'/>
                 </label>
-                <p class='explain'>Switch between Celsius and Fahrenheit.
-                    <button class='my-buttons' type='button'>Ok!</button>
-                </p>
-                <button class='my-buttons' type='button' onClick={()=>setShow(!show)}>More info</button>
+                {
+                    explain?<p class='explain'>Switch between Celsius and Fahrenheit.
+                        <button class='my-buttons' type='button' onClick={()=>setExplain(false)}>Ok!</button>
+                    </p>:<div></div>
+                
+                }
+                <button class='my-buttons' type='button' onClick={()=>setShow(!show)} id='more-info'>More info</button>
             </div>
             <div class='main-info'>
                 <h4>Corvallis, OR <br/> 97331</h4>
