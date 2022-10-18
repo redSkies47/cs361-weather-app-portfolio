@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import logo from '../img/logo192.png';
 import { BsArrowClockwise } from 'react-icons/bs';
@@ -6,6 +6,8 @@ import { WiCelsius, WiFahrenheit, WiNightCloudy, WiCloudy, WiDaySunny } from 're
 import { MdWarning } from 'react-icons/md';
 
 function Forecast() {
+
+    const [show, setShow]=useState(false);
 
     const history = useHistory();
 
@@ -38,7 +40,7 @@ function Forecast() {
                 <p class='explain'>Switch between Celsius and Fahrenheit.
                     <button class='my-buttons' type='button'>Ok!</button>
                 </p>
-                <button class='my-buttons' type='button'>More info</button>
+                <button class='my-buttons' type='button' onClick={()=>setShow(!show)}>More info</button>
             </div>
             <div class='main-info'>
                 <h4>Corvallis, OR <br/> 97331</h4>
@@ -51,7 +53,9 @@ function Forecast() {
                 </span>
                 <h3><MdWarning/> Flash flood warning</h3>
             </div>
-            <div class='extra-info'>
+            {
+                
+            show?<div class='extra-info'>
                 <table>
                     <tr class='days'>
                         <th></th>
@@ -84,7 +88,9 @@ function Forecast() {
                         <td></td>
                     </tr>
                 </table>
-            </div>
+            </div>:null
+            
+        }
         </body>
     );
 }

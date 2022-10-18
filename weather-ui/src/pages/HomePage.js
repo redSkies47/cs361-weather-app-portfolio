@@ -1,11 +1,11 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import logo from '../img/logo192.png';
 import { MdSearch } from 'react-icons/md';
 
 function HomePage() {
 
-    const history = useHistory();
+    // const history = useHistory();
     
     return (
         <body class='container'>
