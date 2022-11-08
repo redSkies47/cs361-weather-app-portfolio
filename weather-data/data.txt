@@ -1,0 +1,9 @@
+65; 78; 46; "81%"
+71; 49
+78; 47
+
+// Format of current & following days
+//
+// current temp; high; low; humidity
+// high; low
+// high; low
