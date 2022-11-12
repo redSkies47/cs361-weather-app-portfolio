@@ -1,7 +1,6 @@
 import 'dotenv/config';
 import * as forecasts from './forecast_model.mjs';
 import express from 'express';
-import { body, validationResult } from 'express-validator';
 
 const app = express();
 
@@ -11,13 +10,13 @@ app.use(express.json());
 
 /**
  * Retrieve the weather data corresponding to the provided
- * postal code in the URL
+ * postal code
  */
-app.get('/forecast-f/:_postalCode', (req, res) => {
-    const postalCode = req.params._postalCode;
-    forecasts.findWeatherByPostalCode(postalCode)
+ app.get('/', (req, res) => {
+    forecasts.findWeatherByPostalCode()
         .then (forecast => {
             if (forecast !== null) {
+                console.log(JSON.stringify(forecast));
                 res.json(forecast);
             } else {
                 res.status(404).json({ Error: 'Not found' });
@@ -26,4 +25,8 @@ app.get('/forecast-f/:_postalCode', (req, res) => {
         .catch(error => {
             res.status(400).json({ Error: 'Request failed' });
         });
+});
+
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}...`);
 });
