@@ -4,14 +4,18 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Forecast from './pages/Forecast';
 import Celsius from './pages/Forecast-C';
+import { useState } from 'react';
 
 
 function App() {
+
+  const [setForecastDisplayed] = useState([]);
+  // console.log("does this ever log anywhere?")
   return (
     <div className="App">
       <Router>
         <Route path="/" exact>
-          <HomePage/>
+          <HomePage forecastToDisplay={setForecastDisplayed}/>
         </Route>
         <Route path="/city">
         </Route>

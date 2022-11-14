@@ -6,13 +6,43 @@ import { WiCelsius, WiFahrenheit, WiNightCloudy, WiCloudy, WiDaySunny } from 're
 import { MdWarning } from 'react-icons/md';
 import DarkMode from '../components/DarkMode';
 
-function Forecast() {
+// const fs = require('fs');
+import * as fs from 'fs';
+
+const data = fs.readFileSync('../data/data.json');
+// const obj = JSON.parse(data);
+// console.log(data);
+// let data = {};
+
+// const loadForecastF = async () => {
+//     const serverURL = 'http://localhost:3000/forecastf';
+//     const response = await fetch(serverURL);
+//     const data = await response.json();
+//     // console.log("here is data when loading the page:\n");
+//     // console.log(data.currentTemp);
+
+//     return data;
+// };
+// async function getForecast() {
+//     const serverURL = 'http://localhost:3000/forecastf';
+//     const response = await fetch(serverURL);
+//     const data = await response.json();
+
+//     return data;
+// }
+
+function Forecast({ setForecastDisplayed }) {
+
+    // const data = getForecast();
+    // console.log(data);
 
     const [show, setShow]=useState(false);
 
     const [explain, setExplain]=useState(true);
 
     const history = useHistory();
+
+    // const [forecasts, setForecastF] = useState([]);
 
     const onRedo = async () => {
         history.push('/');
@@ -23,11 +53,48 @@ function Forecast() {
     }
 
     const onFah = async () => {
-        history.push('/forecast')
+        history.push('/forecast-f')
     }
 
+    // let data = {};
+
+    // const loadForecastF = async () => {
+    //     const serverURL = 'http://localhost:3000/forecastf';
+    //     const response = await fetch(serverURL);
+    //     data = await response.json();
+    //     console.log("here is data when loading the page:\n");
+    //     console.log(data.currentTemp);
+    //     // console.log(response);
+    //     // console.log(data);
+    //     // console.log(JSON.stringify(data));
+    //     // setForecastF(data)
+
+    //     return data;
+    // }
+
+    // useEffect ( () => {
+    //     loadForecastF();
+    // }, []);
+
+    // let data = loadForecastF();
+
+    // console.log("here is data when already loaded on the page:\n");
+    // data && console.log(data.currentTemp);
+
+    // async function getForecastF () {
+    //     const response = await fetch('/forecastf');
+    //     const data = await response.json();
+    //     console.log(data);
+    // }
+    // getForecastF();
+
+    // let serverURL = 'http://localhost:3000/forecastf';
+    // const response = await fetch(serverURL);
+    // const data = await response.json();
+    // console.log(JSON.stringify(data));
+
     return (
-        <body class='container2'>
+        <div class='container2'>
             <img src={logo} class='logo' alt="logo"></img>
             <div class='options'>
                 <label class='switch'>
@@ -98,7 +165,7 @@ function Forecast() {
             </div>:null
             
         }
-        </body>
+        </div>
     );
 }
 
