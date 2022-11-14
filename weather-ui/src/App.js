@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import Forecast from './pages/Forecast';
+import Forecast from './pages/Forecast.js';
 import Celsius from './pages/Forecast-C';
 import { useState } from 'react';
 
