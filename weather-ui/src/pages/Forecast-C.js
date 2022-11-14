@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import logo from '../img/logo192.png';
 import { BsArrowClockwise } from 'react-icons/bs';
 import { WiCelsius, WiFahrenheit, WiNightCloudy, WiCloudy, WiDaySunny } from 'react-icons/wi';
 import { MdWarning } from 'react-icons/md';
 import DarkMode from '../components/DarkMode';
+import * as myData from './getDataC';
 
-function Celsius() {
+function Celsius({ setForecastDisplayed }) {
 
     const [show, setShow]=useState(false);
 
     const [explain, setExplain]=useState(true);
+
+    const [weather, setWeather] = useState(null);
     
     const history = useHistory();
 
@@ -26,8 +29,19 @@ function Celsius() {
         history.push('/forecast-f')
     }
 
+    useEffect( () => {
+        const fetchWeather = async () => {
+            await myData.loadC().then(
+                (data) => {
+                    setWeather(data);
+                });
+        };
+
+        fetchWeather();
+    }, []);
+
     return (
-        <body class='container2'>
+        <div class='container2'>
             <img src={logo} class='logo' alt="logo"></img>
             <div class='options'>
                 <label class='switch'>
@@ -42,7 +56,6 @@ function Celsius() {
                     <WiFahrenheit onClick={onFah} id='fahrenheit-icon'/>
                 </label>
                 {
-                    
                     explain?<p class='explain'>Switch between Celsius and Fahrenheit.
                         <button class='my-buttons' type='button' onClick={()=>setExplain(false)}>Ok!</button>
                     </p>:<div></div>
@@ -50,17 +63,20 @@ function Celsius() {
                 }
                 <button class='my-buttons' type='button' onClick={()=>setShow(!show)} id='more-info'>More info</button>
             </div>
-            <div class='main-info'>
-                <h4>Corvallis, OR <br/> 97331</h4>
-                <span class='current'>
-                    <h1 class='temp'>18&#176;</h1>
-                    <div class='details'>
-                        <WiNightCloudy class='image'/>
-                        <h2 class='description'>Mostly Cloudy</h2>
-                    </div>
-                </span>
-                <h3><MdWarning/> Flash flood warning</h3>
-            </div>
+
+            {weather && (
+                <div class='main-info'>
+                    <h4>Corvallis, OR <br/> 97331</h4>
+                    <span class='current'>
+                        <h1 class='temp'>{ weather.currentTemp } &#176;</h1>
+                        <div class='details'>
+                            <WiNightCloudy class='image'/>
+                            <h2 class='description'>Mostly Cloudy</h2>
+                        </div>
+                    </span>
+                    <h3><MdWarning/> Flash flood warning</h3>
+                </div>
+            )}
             {
                 
             show?<div class='extra-info'>
@@ -77,29 +93,35 @@ function Celsius() {
                         <td><WiDaySunny/></td>
                         <td><WiDaySunny/></td>
                     </tr>
-                    <tr class='highs'>
+                    {weather &&
+                        <tr class='highs'>
                         <td class='key'>highs</td>
-                        <td>26&#176;</td>
-                        <td>22&#176;</td>
-                        <td>26&#176;</td>
-                    </tr>
-                    <tr class='lows'>
+                        <td>{weather.currentHi}&#176;</td>
+                        <td>{weather.tomHi}&#176;</td>
+                        <td>{weather.nextHi}&#176;</td>
+                        </tr>
+                    }
+                    {weather &&
+                        <tr class='lows'>
                         <td class='key'>lows</td>
-                        <td>7&#176;</td>
-                        <td>9&#176;</td>
-                        <td>8&#176;</td>
-                    </tr>
-                    <tr class='humidity'>
-                        <td class='key'>humidity</td>
-                        <td>81%</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                        <td>{weather.currentLo}&#176;</td>
+                        <td>{weather.tomLo}&#176;</td>
+                        <td>{weather.nextLo}&#176;</td>
+                        </tr>
+                    }
+                    {weather &&
+                        <tr class='humidity'>
+                            <td class='key'>humidity</td>
+                            <td>{weather.humidity}%</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    }
                 </table>
             </div>:null
             
         }
-        </body>
+        </div>
     );
 }
 
