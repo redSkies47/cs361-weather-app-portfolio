@@ -7,42 +7,7 @@ import { MdWarning } from 'react-icons/md';
 import DarkMode from '../components/DarkMode';
 import * as myData from './getDataF';
 
-// import * as fs from 'fs/promises';
-// import { readFileSync } from 'fs';
-// const fs = require('fs');
-
-// const myData = fs.readFileSync("../CS361-FtoC_Microservice-main/f_to_c.txt").toString();
-
-// const fs = require('fs');
-// import * as fs from 'fs';
-
-// const data = fs.readFileSync('../data/data.json');
-// const obj = JSON.parse(data);
-// console.log(data);
-// let data = {};
-
-// const loadForecastF = async () => {
-//     const serverURL = 'http://localhost:3000/forecastf';
-//     const response = await fetch(serverURL);
-//     const data = await response.json();
-//     // console.log("here is data when loading the page:\n");
-//     // console.log(data.currentTemp);
-
-//     return data;
-// };
-// async function getForecast() {
-//     const serverURL = 'http://localhost:3000/forecastf';
-//     const response = await fetch(serverURL);
-//     const data = await response.json();
-
-//     return data;
-// }
-// const myData = loadForecastF();
-
 function Forecast({ setForecastDisplayed }) {
-
-    // const data = getForecast();
-    // console.log(data);
 
     const [show, setShow]=useState(false);
 
@@ -51,8 +16,6 @@ function Forecast({ setForecastDisplayed }) {
     const [weather, setWeather] = useState(null);
 
     const history = useHistory();
-
-    // const [forecasts, setForecastF] = useState([]);
 
     const onRedo = async () => {
         history.push('/');
@@ -76,45 +39,6 @@ function Forecast({ setForecastDisplayed }) {
 
         fetchWeather();
     }, []);
-
-    // let data = {};
-
-    // const loadForecastF = async () => {
-    //     const serverURL = 'http://localhost:3000/forecastf';
-    //     const response = await fetch(serverURL);
-    //     data = await response.json();
-    //     console.log("here is data when loading the page:\n");
-    //     console.log(data.currentTemp);
-    //     // console.log(response);
-    //     // console.log(data);
-    //     // console.log(JSON.stringify(data));
-    //     // setForecastF(data)
-
-    //     return data;
-    // }
-
-    // useEffect ( () => {
-    //     loadForecastF();
-    // }, []);
-
-    // let data = loadForecastF();
-
-    // console.log("here is data when already loaded on the page:\n");
-    // data && console.log(data.currentTemp);
-
-    // async function getForecastF () {
-    //     const response = await fetch('/forecastf');
-    //     const data = await response.json();
-    //     console.log(data);
-    // }
-    // getForecastF();
-
-    // let serverURL = 'http://localhost:3000/forecastf';
-    // const response = await fetch(serverURL);
-    // const data = await response.json();
-    // console.log(JSON.stringify(data));
-
-    // const myForecast = myData.loadF();
 
     return (
         <div class='container2'>
