@@ -18,7 +18,6 @@ app.use(express.json());
     forecast_fs.findWeatherByPostalCode()
         .then (forecast => {
             if (forecast !== null) {
-                // console.log(JSON.stringify(forecast));
                 res.json(forecast);
             } else {
                 res.status(404).json({ Error: 'Not found' });
@@ -37,7 +36,6 @@ app.use(express.json());
     forecast_cs.findWeatherByPostalCode()
         .then (forecast => {
             if (forecast !== null) {
-                // console.log(JSON.stringify(forecast));
                 res.json(forecast);
             } else {
                 res.status(404).json({ Error: 'Not found' });
