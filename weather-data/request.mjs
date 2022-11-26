@@ -16,7 +16,6 @@ const writeCommand = async () => {
             message = "Command to microservice issued successfully\n";
             
         }
-        console.log(message);
         });
     
 }

@@ -127,6 +127,4 @@ yarn-error.log*
 
 # microservice
 /CS361-FtoC_Microservice-main
-datac.txt
-receives.mjs
 /.vscode

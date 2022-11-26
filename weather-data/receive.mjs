@@ -8,10 +8,7 @@ const forecast = {};
  */
 const getConvertedData = async () => {
 
-  let myData = readFileSync("../CS361-FtoC_Microservice-main/f_to_c.txt").toString();
-
-  // console.log('here is the data from an empty looking file:');
-  // console.log(myData);
+  let myData = readFileSync("datac.txt").toString();
 
   const lines = myData.split(/;|\r\n|\n/, 8);
 
@@ -27,8 +24,6 @@ const getConvertedData = async () => {
   forecast.tomLo = parseInt(lines[5]);
   forecast.nextHi = parseInt(lines[6]);
   forecast.nextLo = parseInt(lines[7]);
-
-  // console.log(JSON.stringify(forecast));
 
   return forecast;
 }

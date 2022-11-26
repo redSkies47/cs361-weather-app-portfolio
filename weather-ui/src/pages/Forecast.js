@@ -7,26 +7,20 @@ import { MdWarning } from 'react-icons/md';
 import DarkMode from '../components/DarkMode';
 import * as myData from './getDataF';
 
-function Forecast({ setForecastDisplayed }) {
+function Forecast() {
 
     const [show, setShow]=useState(false);
-
     const [explain, setExplain]=useState(true);
-
     const [weather, setWeather] = useState(null);
-
     const history = useHistory();
 
+    
     const onRedo = async () => {
         history.push('/');
     }
 
     const onCel = async() => {
         history.push('/forecast-c')
-    }
-
-    const onFah = async () => {
-        history.push('/forecast-f')
     }
 
     useEffect( () => {
@@ -45,7 +39,6 @@ function Forecast({ setForecastDisplayed }) {
             <img src={logo} class='logo' alt="logo"></img>
             <div class='options'>
                 <label class='switch'>
-                    {/* <input id='toggle-forecast' type='checkbox'></input> */}
                     <DarkMode />
                 </label>
                 <label class="again">
@@ -53,7 +46,7 @@ function Forecast({ setForecastDisplayed }) {
                 </label>
                 <label class='unit'>
                     <WiCelsius onClick={onCel} id='celsius-icon' />
-                    <WiFahrenheit class='selected' onClick={onFah} id='fahrenheit-icon'/>
+                    <WiFahrenheit class='selected' id='fahrenheit-icon'/>
                 </label>
                 {
                     explain?<p class='explain'>Switch between Celsius and Fahrenheit.

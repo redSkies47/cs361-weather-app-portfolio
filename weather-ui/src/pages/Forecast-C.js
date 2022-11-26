@@ -7,22 +7,16 @@ import { MdWarning } from 'react-icons/md';
 import DarkMode from '../components/DarkMode';
 import * as myData from './getDataC';
 
-function Celsius({ setForecastDisplayed }) {
+function Celsius() {
 
     const [show, setShow]=useState(false);
-
     const [explain, setExplain]=useState(true);
-
     const [weather, setWeather] = useState(null);
-    
     const history = useHistory();
 
+    
     const onRedo = async () => {
         history.push('/');
-    }
-
-    const onCel = async() => {
-        history.push('/forecast-c')
     }
 
     const onFah = async () => {
@@ -46,13 +40,12 @@ function Celsius({ setForecastDisplayed }) {
             <div class='options'>
                 <label class='switch'>
                     <DarkMode />
-                    {/* <input id='toggle-forecast' type='checkbox'></input> */}
                 </label>
                 <label class="again">
                     <p><BsArrowClockwise onClick={onRedo} id='redo-icon'/> Another search? Press to start again from the search page!</p>
                 </label>
                 <label class='unit'>
-                    <WiCelsius class='selected' onClick={onCel} id='celsius-icon' />
+                    <WiCelsius class='selected'id='celsius-icon' />
                     <WiFahrenheit onClick={onFah} id='fahrenheit-icon'/>
                 </label>
                 {
