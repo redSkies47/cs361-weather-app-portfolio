@@ -76,9 +76,9 @@ function Celsius() {
                 <table>
                     <tr class='days'>
                         <th></th>
+                        <th>Sat</th>
+                        <th>Sun</th>
                         <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
                     </tr>
                     <tr class='weather-icons'>
                         <td></td>
