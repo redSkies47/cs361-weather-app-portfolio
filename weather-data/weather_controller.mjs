@@ -11,8 +11,7 @@ const PORT = process.env.PORT;
 app.use(express.json());
 
 /**
- * Retrieve the weather data corresponding to the provided
- * postal code
+ * Get fahrenheit forecast
  */
  app.get('/forecastf', (req, res) => {
     forecast_fs.findWeatherByPostalCode()
@@ -29,8 +28,7 @@ app.use(express.json());
 });
 
 /**
- * Retrieve the weather data corresponding to the provided
- * postal code
+ * Get celsuis forecast
  */
  app.get('/forecastc', (req, res) => {
     forecast_cs.findWeatherByPostalCode()
