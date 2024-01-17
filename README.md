@@ -9,6 +9,6 @@ The following is my class presentation that showcases the webapp in action and g
 />](https://www.youtube.com/embed/GPos-BuGtzc)
 
 ### Built With
-This project was built with Javascript, Express, Dotenv for the backend. The frontend uses React and CSS. 
+This project was built with Javascript, Express, and Dotenv for the backend. The frontend uses React, HTML, and CSS. 
 
 To support planning and collaborating, I used Asana for Sprint Planning.
